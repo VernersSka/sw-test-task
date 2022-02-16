@@ -2,7 +2,7 @@
 
 include_once __DIR__ . '/Queries.class.php'; 
 
-abstract class Product extends Queries
+abstract class Product
 {
     public $sku, $name, $price, $type, $description;
     public $error = ['error_msg' => ''];
@@ -46,5 +46,4 @@ abstract class Product extends Queries
         $queriesInstance->setProperties($this->sku, $this->name, $this->price, $this->type, $this->description);
         $queriesInstance->create();
     }
-
 }

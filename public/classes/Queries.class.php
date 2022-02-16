@@ -1,13 +1,5 @@
 <?php
 
-define('DEBUG_MODE', false);
-if (DEBUG_MODE) 
-{
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-}
-
 include_once __DIR__ . '/../config/Database.php';
 
 class Queries extends Database
@@ -22,7 +14,7 @@ class Queries extends Database
         $this->conn = parent::connect();
     }
 
-    protected function setProperties($sku = null, $name = null, $price = null, $type = null, $description = null)
+    public function setProperties($sku = null, $name = null, $price = null, $type = null, $description = null)
     {
         $this->sku = $sku;
         $this->name = $name;
